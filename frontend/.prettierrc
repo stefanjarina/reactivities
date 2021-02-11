@@ -6,7 +6,7 @@
   "insertPragma": false,
   "jsxBracketSameLine": true,
   "jsxSingleQuote": false,
-  "printWidth": 100,
+  "printWidth": 80,
   "proseWrap": "preserve",
   "quoteProps": "as-needed",
   "requirePragma": false,
@@ -15,6 +15,6 @@
   "tabWidth": 2,
   "trailingComma": "es5",
   "useTabs": false,
-  "vueIndentScriptAndStyle": true,
+  "vueIndentScriptAndStyle": false,
   "svelteSortOrder": "scripts-markup-styles"
 }
