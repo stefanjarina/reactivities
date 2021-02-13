@@ -3,7 +3,7 @@ import { Button, Card, Image } from 'semantic-ui-react';
 import LoadingComponent from '../../../app/layout/LoadingComponent';
 import { useStore } from '../../../app/stores/store';
 
-export default function ActivityDetails() {
+const ActivityDetails = () => {
   const { activityStore } = useStore();
   const {
     selectedActivity: activity,
@@ -41,4 +41,6 @@ export default function ActivityDetails() {
       </Card.Content>
     </Card>
   );
-}
+};
+
+export default ActivityDetails;

@@ -6,7 +6,7 @@ import ActivityList from './ActivityList';
 import { useStore } from '../../../app/stores/store';
 import { observer } from 'mobx-react-lite';
 
-function ActivityDashboard() {
+const ActivityDashboard = () => {
   const { activityStore } = useStore();
   const { selectedActivity, editMode } = activityStore;
 
@@ -21,6 +21,6 @@ function ActivityDashboard() {
       </Grid.Column>
     </Grid>
   );
-}
+};
 
 export default observer(ActivityDashboard);

@@ -6,13 +6,15 @@ interface Props {
   content?: string;
 }
 
-export default function LoadingComponent({
+const LoadingComponent = ({
   inverted = true,
   content = 'Loading...',
-}: Props) {
+}: Props) => {
   return (
     <Dimmer active={true} inverted={inverted}>
       <Loader content={content} />
     </Dimmer>
   );
-}
+};
+
+export default LoadingComponent;

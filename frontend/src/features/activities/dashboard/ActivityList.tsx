@@ -3,7 +3,7 @@ import React, { SyntheticEvent, useState } from 'react';
 import { Button, Item, Label, Segment } from 'semantic-ui-react';
 import { useStore } from '../../../app/stores/store';
 
-function ActivityList() {
+const ActivityList = () => {
   const { activityStore } = useStore();
   const { deleteActivity, activitiesByDate, loading } = activityStore;
 
@@ -54,6 +54,6 @@ function ActivityList() {
       </Item.Group>
     </Segment>
   );
-}
+};
 
 export default observer(ActivityList);

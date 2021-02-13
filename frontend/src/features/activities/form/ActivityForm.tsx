@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite';
 import { Button, Form, Segment } from 'semantic-ui-react';
 import { useStore } from '../../../app/stores/store';
 
-function ActivityForm() {
+const ActivityForm = () => {
   const { activityStore } = useStore();
   const {
     selectedActivity,
@@ -92,6 +92,6 @@ function ActivityForm() {
       </Form>
     </Segment>
   );
-}
+};
 
 export default observer(ActivityForm);

@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Container, Menu } from 'semantic-ui-react';
 import { useStore } from '../stores/store';
 
-export default function Navbar() {
+const Navbar = () => {
   const { activityStore } = useStore();
 
   return (
@@ -23,4 +23,6 @@ export default function Navbar() {
       </Container>
     </Menu>
   );
-}
+};
+
+export default Navbar;
