@@ -4,12 +4,14 @@ import { Activity } from '../../../app/models/activity';
 
 interface Props {
   activity: Activity | undefined;
+  submitting: boolean;
   closeForm: () => void;
   createOrEdit: (activity: Activity) => void;
 }
 
 export default function ActivityForm({
   activity: selectedActivity,
+  submitting,
   closeForm,
   createOrEdit,
 }: Props) {
@@ -38,7 +40,7 @@ export default function ActivityForm({
 
   return (
     <Segment clearing>
-      <Form onSubmit={handleSubmit} autoComplete="off">
+      <Form onSubmit={handleSubmit} autoComplete="on">
         <Form.Input
           placeholder="Title"
           value={activity.title}
@@ -59,6 +61,7 @@ export default function ActivityForm({
         />
         <Form.Input
           placeholder="Date"
+          type="date"
           value={activity.date}
           name="date"
           onChange={handleInputChange}
@@ -75,7 +78,13 @@ export default function ActivityForm({
           name="venue"
           onChange={handleInputChange}
         />
-        <Button floated="right" positive type="submit" content="Submit" />
+        <Button
+          loading={submitting}
+          floated="right"
+          positive
+          type="submit"
+          content="Submit"
+        />
         <Button
           onClick={closeForm}
           floated="right"

@@ -8,9 +8,10 @@ import ActivityList from './ActivityList';
 interface Props {
   activities: Activity[];
   selectedActivity: Activity | undefined;
+  editMode: boolean;
+  submitting: boolean;
   selectActivity: (id: string) => void;
   cancelSelectActivity: () => void;
-  editMode: boolean;
   openForm: (id: string) => void;
   closeForm: () => void;
   createOrEdit: (activity: Activity) => void;
@@ -20,9 +21,10 @@ interface Props {
 export default function ActivityDashboard({
   activities,
   selectedActivity,
+  editMode,
+  submitting,
   selectActivity,
   cancelSelectActivity,
-  editMode,
   openForm,
   closeForm,
   createOrEdit,
@@ -33,6 +35,7 @@ export default function ActivityDashboard({
       <Grid.Column width="10">
         <ActivityList
           activities={activities}
+          submitting={submitting}
           selectActivity={selectActivity}
           deleteActivity={deleteActivity}
         />
@@ -50,6 +53,7 @@ export default function ActivityDashboard({
             closeForm={closeForm}
             activity={selectedActivity}
             createOrEdit={createOrEdit}
+            submitting={submitting}
           />
         )}
       </Grid.Column>
