@@ -14,17 +14,24 @@ const App = () => {
 
   return (
     <>
-      <Navbar />
-      <Container style={{ marginTop: '7em' }}>
-        <Route path="/" exact component={Homepage} />
-        <Route path="/activities" exact component={ActivityDashboard} />
-        <Route path="/activities/:id" component={ActivityDetails} />
-        <Route
-          path={['/createActivity', '/manage/:id']}
-          key={location.key}
-          component={ActivityForm}
-        />
-      </Container>
+      <Route path="/" exact component={Homepage} />
+      <Route
+        path={'/(.+)'}
+        render={() => (
+          <>
+            <Navbar />
+            <Container style={{ marginTop: '7em' }}>
+              <Route path="/activities" exact component={ActivityDashboard} />
+              <Route path="/activities/:id" component={ActivityDetails} />
+              <Route
+                path={['/createActivity', '/manage/:id']}
+                key={location.key}
+                component={ActivityForm}
+              />
+            </Container>
+          </>
+        )}
+      />
     </>
   );
 };

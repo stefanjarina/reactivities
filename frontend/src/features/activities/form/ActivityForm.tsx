@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite';
 import { Button, Form, Segment } from 'semantic-ui-react';
 import { v4 as uuid } from 'uuid';
 import { useStore } from '../../../app/stores/store';
-import { useHistory, useParams } from 'react-router-dom';
+import { useHistory, useParams, Link } from 'react-router-dom';
 import LoadingComponent from '../../../app/layout/LoadingComponent';
 
 const ActivityForm = () => {
@@ -105,7 +105,13 @@ const ActivityForm = () => {
           type="submit"
           content="Submit"
         />
-        <Button floated="right" type="button" content="Cancel" />
+        <Button
+          as={Link}
+          to="/activities/"
+          floated="right"
+          type="button"
+          content="Cancel"
+        />
       </Form>
     </Segment>
   );
